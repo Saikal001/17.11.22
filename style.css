@@ -1,16 +1,23 @@
 *{
   box-sizing: border-box;
 }
+.popover{
+  position: relative;
+}
 .popover-content{
 box-shadow: 0 0 10px grey ;
 padding: 15px;
 border-radius: 10px;
-display: inline-block;
 background-color: rgb(238, 238, 112);
 
 position: absolute;
 left: 0;
 top: 35px;
+
+display: none;
+}
+.popover button:focus + .popover-content{
+  display: block;
 }
 .popover-content span{
   display: block;
