@@ -1,32 +1,68 @@
 *{
   box-sizing: border-box;
 }
-.popover{
+.example-1::before{
+  content: "HELLO";
+}
+
+.example-1::after{
+  content: "BYE"
+}
+.example-2::before{
+  content: "HELLO";
+}
+
+.example-2::after{
+  content: "BYE"
+}
+.example-3::before{
+  content: "HELLO";
+}
+
+.example-3::after{
+  content: "BYE"
+}
+
+
+
+
+
+
+
+
+
+
+[data-popover]{
   position: relative;
 }
-.popover-content{
+[data-popover]::after{
+  content:attr(data-popover) ;
 box-shadow: 0 0 10px grey ;
 padding: 15px;
 border-radius: 10px;
 background-color: rgb(238, 238, 112);
-
 position: absolute;
 left: 0;
 top: 35px;
-
 display: none;
 }
-.popover button:focus + .popover-content{
+[data-popover]{
   display: block;
 }
-.popover-content span{
+[data-popover]::before{
+
   display: block;
   height: 10px;
   width: 20px;
   border-bottom: 10px solid  rgb(238, 238, 112);
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  
   position: absolute;
-  top: -10px;
+  top: 15px;
+  left: 0;
+  display: none;
+}
+[data-popover]:focus::after,
+[data-popover]:focus::before {
+  display: block;
 }
